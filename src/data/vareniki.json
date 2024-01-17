@@ -1,0 +1,16 @@
+{
+  "menu": [
+    {
+      "item": "Green Tea",
+      "price": 2.0
+    },
+    {
+      "item": "Chai Latte",
+      "price": 3.5
+    },
+    {
+      "item": "Black TEA",
+      "price": 2.5
+    }
+  ]
+}
