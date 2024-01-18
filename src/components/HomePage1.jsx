@@ -1,12 +1,12 @@
 import Card from "react-bootstrap/Card";
-import menuData from "../data/vareniki.json";
+import menuData from "../data/drink.json";
 
 const HomePage1 = () => {
   return (
     <>
-      {menuData.menu.map((item, index) => (
+      {menuData.menu.map((item) => (
         <Card
-          key={index}
+          key={item.id}
           border="primary"
           style={{ width: "18rem", marginBottom: "20px" }}
         >

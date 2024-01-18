@@ -1,14 +1,17 @@
 {
   "menu": [
     {
+      "id": 1,
       "item": "Green Tea",
       "price": 2.0
     },
     {
+      "id": 2,
       "item": "Chai Latte",
       "price": 3.5
     },
     {
+      "id": 3,
       "item": "Black TEA",
       "price": 2.5
     }
