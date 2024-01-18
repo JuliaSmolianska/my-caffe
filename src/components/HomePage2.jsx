@@ -15,10 +15,13 @@ const HomePage2 = () => {
   const handleTitleSave = async (id) => {
     try {
       // Use Axios to make a PUT request to your server endpoint
-      const response = await axios.put("/.netlify/functions/updateJson", {
-        id,
-        newTitle,
-      });
+      const response = await axios.put(
+        "https://resonant-donut-5218ec.netlify.app/.netlify/functions/updateJson",
+        {
+          id,
+          newTitle,
+        }
+      );
 
       // Handle the response or update the state as needed
       console.log(response.data);
