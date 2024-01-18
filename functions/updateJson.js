@@ -1,26 +1,25 @@
-import fs from 'fs';
+import fetch from 'node-fetch';
 
 exports.handler = async function (event, context) {
   try {
     // Ваша логіка оновлення JSON-файла
-    const newData = {
+    const newData = { 
       item: "newTitle"
     };
 
-    // Шлях до JSON-файлу
-    const jsonFilePath = 'public/data/drink.json';
+    // Оновлення JSON-файла через Netlify API за допомогою node-fetch
+    const response = await fetch(process.env.JSON_FILE_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.NETLIFY_API_ACCESS_TOKEN}`
+      },
+      body: JSON.stringify(newData)
+    });
 
-    // Читаємо поточний вміст файлу
-    const currentData = JSON.parse(fs.readFileSync(jsonFilePath, 'utf-8'));
-
-    // Оновлюємо дані
-    const updatedData = {
-      ...currentData,
-      ...newData
-    };
-
-    // Записуємо оновлений вміст назад у файл
-    fs.writeFileSync(jsonFilePath, JSON.stringify(updatedData), 'utf-8');
+    if (!response.ok) {
+      throw new Error(`Failed to update JSON file. Status: ${response.status}`);
+    }
 
     return {
       statusCode: 200,
