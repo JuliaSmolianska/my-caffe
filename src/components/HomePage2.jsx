@@ -16,7 +16,7 @@ const HomePage2 = () => {
     try {
       // Use Axios to make a PUT request to your server endpoint
       const response = await axios.put(
-        "https://resonant-donut-5218ec.netlify.app/.netlify/functions/updateJson.js",
+        "https://resonant-donut-5218ec.netlify.app/.netlify/functions/updateJson",
         {
           id,
           newTitle,
