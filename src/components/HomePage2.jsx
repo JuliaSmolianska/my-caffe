@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
-import axios from "axios"; // Import Axios library
+import axios from "axios";
 import menuData from "../data/drink.json";
 
 const HomePage2 = () => {
@@ -15,7 +15,10 @@ const HomePage2 = () => {
   const handleTitleSave = async (id) => {
     try {
       // Use Axios to make a PUT request to your server endpoint
-      const response = await axios.put("/api/updateJson", { id, newTitle });
+      const response = await axios.put("/.netlify/functions/updateJson", {
+        id,
+        newTitle,
+      });
 
       // Handle the response or update the state as needed
       console.log(response.data);
