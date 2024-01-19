@@ -10,7 +10,7 @@ const HomePage1 = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${process.env.PUBLIC_URL}/data/dishes.json`
+          "https://fancy-cupcake-24691f.netlify.app/data/dishes.json"
         );
         const data = await response.json();
         setCards(data.menu);
@@ -31,7 +31,7 @@ const HomePage1 = () => {
       // Use Axios to make a PUT request to your server endpoint
       // Note: This might need adjustments based on your server logic
       const response = await fetch(
-        `${process.env.PUBLIC_URL}/data/dishes.json`,
+        "https://fancy-cupcake-24691f.netlify.app/data/dishes.json",
         {
           method: "PUT",
           headers: {
