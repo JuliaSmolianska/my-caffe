@@ -28,12 +28,10 @@ const HomePage1 = () => {
 
   const handleTitleSave = async (id) => {
     try {
-      // Use Axios to make a PUT request to your server endpoint
-      // Note: This might need adjustments based on your server logic
-      const response = await fetch(
+        const response = await fetch(
         "https://fancy-cupcake-24691f.netlify.app/data/dishes.json",
         {
-          method: "PUT",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
